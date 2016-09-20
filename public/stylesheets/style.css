@@ -1,5 +1,176 @@
+/****************************************************
+*                     mixins                       *
+***************************************************/
+/* top left, top right, bottom right, bottom left */
+/****************************************************
+*                     functions                     *
+***************************************************/
 body {
-  text-align: center;
-  font-size: 12px;
-  font-family: "Arial, sans-serif";
-}
+  margin: 0 auto;
+  padding: 0 auto;
+  font-size: 0.75em;
+  font-family: "Montserrat";
+  max-width: 960px;
+  background: #272727; }
+
+.container {
+  max-width: 350px;
+  margin: 50px auto; }
+  .container .header__title {
+    font-size: 1.375em;
+    font-weight: 700;
+    color: #262626;
+    background: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    float: right;
+    padding: 13px 35px 18px;
+    margin-top: -77px;
+    width: 120px;
+    text-align: right;
+    border-radius: 2px 0 0 0;
+    -webkit-border-radius: 2px 0 0 0;
+    -moz-border-radius: 2px 0 0 0;
+    -ms-border-radius: 2px 0 0 0; }
+  .container .ranking {
+    list-style: none;
+    padding: 0;
+    background-color: #ffffff;
+    width: 80%;
+    float: right;
+    border-radius: 2px 0 0 0;
+    -webkit-border-radius: 2px 0 0 0;
+    -moz-border-radius: 2px 0 0 0;
+    -ms-border-radius: 2px 0 0 0; }
+  .container .ranking li {
+    padding: 1px 0 25px 0;
+    border-radius: 2px 0 0 0;
+    -webkit-border-radius: 2px 0 0 0;
+    -moz-border-radius: 2px 0 0 0;
+    -ms-border-radius: 2px 0 0 0; }
+    .container .ranking li:nth-child(even) {
+      background: #dddae8; }
+    .container .ranking li:hover {
+      background: #b83737; }
+      .container .ranking li:hover .ranking__artist-name {
+        color: #ffffff; }
+      .container .ranking li:hover .ranking__artist-descripton {
+        color: #000000; }
+      .container .ranking li:hover .ranking__artist-avatar {
+        border: 5px solid #ffffff; }
+      .container .ranking li:hover .tooltip {
+        display: inline-block;
+        visibility: hidden;
+        text-align: center;
+        position: absolute;
+        z-index: 1;
+        margin-left: 315px;
+        margin-top: -60px; }
+        .container .ranking li:hover .tooltip:before {
+          content: "";
+          border-width: 10px;
+          border-color: transparent #ffffff transparent transparent;
+          border-style: solid;
+          position: absolute;
+          left: -20px;
+          top: 23px; }
+        .container .ranking li:hover .tooltip .tooltip__like {
+          border-radius: 5px 0 0 5px;
+          -webkit-border-radius: 5px 0 0 5px;
+          -moz-border-radius: 5px 0 0 5px;
+          -ms-border-radius: 5px 0 0 5px;
+          border-right: 2px solid #ffffff; }
+        .container .ranking li:hover .tooltip .tooltip__dontlike {
+          border-radius: 0 5px 5px 0;
+          -webkit-border-radius: 0 5px 5px 0;
+          -moz-border-radius: 0 5px 5px 0;
+          -ms-border-radius: 0 5px 5px 0;
+          border-left: 1px solid #ffffff; }
+        .container .ranking li:hover .tooltip .tooltip__like,
+        .container .ranking li:hover .tooltip .tooltip__dontlike {
+          overflow: hidden;
+          background: #ffffff;
+          float: left; }
+          .container .ranking li:hover .tooltip .tooltip__like .tooltip__title,
+          .container .ranking li:hover .tooltip .tooltip__like .tooltip__count,
+          .container .ranking li:hover .tooltip .tooltip__dontlike .tooltip__title,
+          .container .ranking li:hover .tooltip .tooltip__dontlike .tooltip__count {
+            text-transform: uppercase; }
+          .container .ranking li:hover .tooltip .tooltip__like .tooltip__title,
+          .container .ranking li:hover .tooltip .tooltip__dontlike .tooltip__title {
+            background: #b83737;
+            padding: 2px 6px;
+            color: #ffffff; }
+          .container .ranking li:hover .tooltip .tooltip__like .tooltip__count,
+          .container .ranking li:hover .tooltip .tooltip__dontlike .tooltip__count {
+            color: #707070;
+            padding: 8px 12px;
+            font-size: 1.375em;
+            font-weight: 700; }
+        .container .ranking li:hover .tooltip .divisor {
+          border-right: 1px solid #000000;
+          height: 100%;
+          position: absolute;
+          left: 67px; }
+      .container .ranking li:hover:first-child {
+        border-radius: 5px 0 0 2px;
+        -webkit-border-radius: 5px 0 0 2px;
+        -moz-border-radius: 5px 0 0 2px;
+        -ms-border-radius: 5px 0 0 2px; }
+      .container .ranking li:hover:last-child {
+        border-radius: 0 5px 5px 0;
+        -webkit-border-radius: 0 5px 5px 0;
+        -moz-border-radius: 0 5px 5px 0;
+        -ms-border-radius: 0 5px 5px 0; }
+      .container .ranking li:hover:hover .tooltip {
+        visibility: visible; }
+  .container .ranking__artist {
+    transition: all .3s linear;
+    position: relative;
+    height: 85px;
+    width: 255px;
+    left: -9px;
+    margin-bottom: -17px; }
+    .container .ranking__artist .indice {
+      text-align: center;
+      width: 15px;
+      left: 45px;
+      bottom: 10px;
+      position: absolute;
+      /* top left, top right, bottom right, bottom left */
+      border-radius: 50% 50% 50% 50%;
+      -webkit-border-radius: 50% 50% 50% 50%;
+      -moz-border-radius: 50% 50% 50% 50%;
+      -ms-border-radius: 50% 50% 50% 50%;
+      font-size: 1em;
+      color: #707070;
+      background: #ffffff;
+      border: 1px solid #707070; }
+  .container .ranking__artist-avatar {
+    width: 64px;
+    height: 64px;
+    float: left;
+    border-radius: 50% 50% 50% 50%;
+    -webkit-border-radius: 50% 50% 50% 50%;
+    -moz-border-radius: 50% 50% 50% 50%;
+    -ms-border-radius: 50% 50% 50% 50%;
+    border: 5px solid #b83737;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+    .container .ranking__artist-avatar:before {
+      content: ""; }
+  .container .ranking__artist-info {
+    padding: 1px 0 0 90px; }
+  .container .ranking__artist-name {
+    font-size: 1.25em;
+    color: #b83737;
+    letter-spacing: -1px;
+    font-weight: initial; }
+  .container .ranking__artist-descripton {
+    margin: -12px 0;
+    font-size: 0.875em;
+    color: #909090; }
+  .container .tooltip {
+    display: none; }
